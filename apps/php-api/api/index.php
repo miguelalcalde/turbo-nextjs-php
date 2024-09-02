@@ -25,6 +25,32 @@ $pdo = getPDO();
 $dishController = new DishController($pdo);
 $restaurantController = new RestaurantController($pdo);
 
+// Add the new index endpoint
+$app->get('/', function (Request $request, Response $response) {
+    $html = <<<HTML
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>API Endpoints</title>
+    </head>
+    <body>
+        <h1>Available API Endpoints</h1>
+        <ul>
+            <li><a href="/dishes">/dishes</a> - Search dishes</li>
+            <li><a href="/restaurants">/restaurants</a> - Search restaurants</li>
+            <li><a href="/restaurants/{id}/dishes">/restaurants/{id}/dishes</a> - Get dishes for a specific restaurant</li>
+            <li><a href="/restaurants/{id}">/restaurants/{id}</a> - Get details for a specific restaurant</li>
+        </ul>
+    </body>
+    </html>
+    HTML;
+
+    $response->getBody()->write($html);
+    return $response->withHeader('Content-Type', 'text/html');
+});
+
 $app->get('/dishes', [$dishController, 'search']);
 $app->get('/restaurants', [$restaurantController, 'search']);
 $app->get('/restaurants/{id}/dishes', [$restaurantController, 'getDishes']);
