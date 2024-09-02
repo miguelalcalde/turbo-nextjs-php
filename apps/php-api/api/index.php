@@ -5,7 +5,7 @@ use Slim\Factory\AppFactory;
 use App\Controllers\DishController;
 use App\Controllers\RestaurantController;
 
-require __DIR__ . '/../.env.php';
+# require __DIR__ . '/../.env.php';
 require __DIR__ . '/../vendor/autoload.php';
 
 
