@@ -5,20 +5,14 @@ use Slim\Factory\AppFactory;
 use App\Controllers\DishController;
 use App\Controllers\RestaurantController;
 
+require __DIR__ . '/../.env.php';
 require __DIR__ . '/../vendor/autoload.php';
 
-
-// Check if we're in a local development environment
-if (getenv('APP_ENV') === 'local') {
-    $dotenv = Dotenv\Dotenv::createUnsafeImmutable(__DIR__ . '/../../../');
-    $dotenv->load();
-}
 
 // Check if environment variables are loaded
 if (!getenv('DB_HOST') || !getenv('DB_NAME') || !getenv('DB_USER') || !getenv('DB_PASS') || !getenv('DB_PORT')) {
     throw new \Exception("Environment variables not loaded correctly");
 }
-
 
 $app = AppFactory::create();
 
@@ -38,6 +32,7 @@ $app->get('/', function (Request $request, Response $response) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>API Endpoints</title>
+        <link rel="icon" type="image/x-icon" href="/favicon.ico">
     </head>
     <body>
         <h1>Available API Endpoints</h1>
@@ -59,6 +54,5 @@ $app->get('/dishes', [$dishController, 'search']);
 $app->get('/restaurants', [$restaurantController, 'search']);
 $app->get('/restaurants/{id}/dishes', [$restaurantController, 'getDishes']);
 $app->get('/restaurants/{id}', [$restaurantController, 'getRestaurant']);
-
 
 $app->run();
