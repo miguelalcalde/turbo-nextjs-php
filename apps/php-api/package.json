@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "php -S localhost:8080 -t public",
-    "start": "php -S localhost:8080 -t public"
+    "dev": "php -S localhost:8080 -t api",
+    "start": "php -S localhost:8080 -t api"
   }
 }
