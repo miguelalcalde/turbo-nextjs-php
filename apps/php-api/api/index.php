@@ -7,11 +7,15 @@ use App\Controllers\RestaurantController;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$dotenv = Dotenv\Dotenv::createUnsafeImmutable(__DIR__ . '/../../../');
-$dotenv->load();
+
+// Check if we're in a local development environment
+if (getenv('APP_ENV') === 'local') {
+    $dotenv = Dotenv\Dotenv::createUnsafeImmutable(__DIR__ . '/../../../');
+    $dotenv->load();
+}
 
 // Check if environment variables are loaded
-if (!$_ENV['DB_HOST'] || !$_ENV['DB_NAME'] || !$_ENV['DB_USER'] || !$_ENV['DB_PASS'] || !$_ENV['DB_PORT']) {
+if (!getenv('DB_HOST') || !getenv('DB_NAME') || !getenv('DB_USER') || !getenv('DB_PASS') || !getenv('DB_PORT')) {
     throw new \Exception("Environment variables not loaded correctly");
 }
 
