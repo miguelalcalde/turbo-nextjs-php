@@ -69,6 +69,6 @@ Thumbs.db
 /apps/frontend/.next/
 /apps/frontend/out/
 
-# Temporary files
-*.tmp
-*.temp
+# /apps/php-api/vendor/*
+# /apps/php-api/composer.lock
+# /apps/php-api/composer.phar

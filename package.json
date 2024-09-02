@@ -1,12 +1,10 @@
 {
   "name": "turbo-nextjs-php",
   "version": "1.0.0",
+  "packageManager": "pnpm@9.1.1",
   "private": true,
-  "workspaces": [
-    "apps/*"
-  ],
   "scripts": {
-    "dev": "turbo run dev",
+    "dev": "pnpm run --parallel -r dev",
     "build": "turbo run build",
     "start": "turbo run start",
     "lint": "turbo run lint"
