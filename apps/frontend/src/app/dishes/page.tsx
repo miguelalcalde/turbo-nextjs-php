@@ -13,6 +13,7 @@ async function getDishes(
   }
 
   const data = await response.json();
+
   return { dishes: data.data, totalPages: data.meta.total_pages };
 }
 

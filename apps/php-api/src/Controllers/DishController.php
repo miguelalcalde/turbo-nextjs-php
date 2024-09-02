@@ -22,7 +22,7 @@ class DishController
     {
         $query = $request->getQueryParams()['q'] ?? '';
         $page = (int)($request->getQueryParams()['page'] ?? 1);
-        $perPage = (int)($request->getQueryParams()['per_page'] ?? 10);
+        $perPage = (int)($request->getQueryParams()['per_page'] ?? 9);
 
         $stmt = $this->pdo->prepare("SELECT * FROM dishes WHERE name ILIKE :query");
         $stmt->execute([':query' => "%$query%"]);

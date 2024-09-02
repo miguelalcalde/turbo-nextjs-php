@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "php -S localhost:8080 -t api",
     "start": "php -S localhost:8080 -t api",
+    "autoload": "composer dump-autoload",
     "build": "echo 'No build script required for PHP API'"
   }
 }

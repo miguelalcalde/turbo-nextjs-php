@@ -1,7 +1,8 @@
 export interface Dish {
   id: string;
   name: string;
-  priceRange: string;
+  price_min: string;
+  price_max: string;
   description: string;
   image?: string;
   isVegetarian?: boolean;

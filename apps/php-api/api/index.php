@@ -15,12 +15,6 @@ if (!getenv('DB_HOST') || !getenv('DB_NAME') || !getenv('DB_USER') || !getenv('D
     throw new \Exception("Environment variables not loaded correctly");
 }
 
-// Debugging: Log the retrieved environment variables
-error_log("DB_HOST: " . getenv('DB_HOST'));
-error_log("DB_NAME: " . getenv('DB_NAME'));
-error_log("DB_USER: " . getenv('DB_USER'));
-error_log("DB_PASS: " . getenv('DB_PASS'));
-error_log("DB_PORT: " . getenv('DB_PORT'));
 
 $app = AppFactory::create();
 
@@ -34,5 +28,7 @@ $restaurantController = new RestaurantController($pdo);
 $app->get('/dishes', [$dishController, 'search']);
 $app->get('/restaurants', [$restaurantController, 'search']);
 $app->get('/restaurants/{id}/dishes', [$restaurantController, 'getDishes']);
+$app->get('/restaurants/{id}', [$restaurantController, 'getRestaurant']);
+
 
 $app->run();
