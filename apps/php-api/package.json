@@ -2,8 +2,12 @@
   "name": "php-api",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
     "dev": "php -S localhost:8080 -t api",
-    "start": "php -S localhost:8080 -t api"
+    "start": "php -S localhost:8080 -t api",
+    "build": "echo 'No build script required for PHP API'"
   }
 }
