@@ -6,9 +6,12 @@ import { CardDish } from "@/components/card-dish";
 import Paginator from "@/components/paginator";
 
 async function getRestaurant(id: string): Promise<Restaurant> {
-  const response = await fetch(`http://localhost:8080/restaurants/${id}`, {
-    cache: "no-store",
-  });
+  const response = await fetch(
+    `${process.env.API_ENDPOINT}/restaurants/${id}`,
+    {
+      cache: "no-store",
+    }
+  );
   if (!response.ok) {
     throw new Error("Failed to fetch restaurant");
   }
@@ -20,7 +23,7 @@ async function getRestaurantDishes(
   page: number = 1
 ): Promise<{ dishes: Dish[]; totalPages: number }> {
   const response = await fetch(
-    `http://localhost:8080/restaurants/${id}/dishes?page=${page}`,
+    `${process.env.API_ENDPOINT}/restaurants/${id}/dishes?page=${page}`,
     {
       cache: "no-store",
     }

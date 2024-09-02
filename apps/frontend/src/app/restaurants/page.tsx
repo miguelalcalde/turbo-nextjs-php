@@ -6,7 +6,7 @@ async function getRestaurants(
   page: number = 1
 ): Promise<{ restaurants: Restaurant[]; totalPages: number }> {
   const response = await fetch(
-    `http://localhost:8080/restaurants?page=${page}`,
+    `${process.env.API_ENDPOINT}/restaurants?page=${page}`,
     {
       cache: "no-store",
     }

@@ -5,9 +5,12 @@ import Paginator from "@/components/paginator";
 async function getDishes(
   page: number = 1
 ): Promise<{ dishes: Dish[]; totalPages: number }> {
-  const response = await fetch(`http://localhost:8080/dishes?page=${page}`, {
-    cache: "no-store",
-  });
+  const response = await fetch(
+    `${process.env.API_ENDPOINT}/dishes?page=${page}`,
+    {
+      cache: "no-store",
+    }
+  );
   if (!response.ok) {
     throw new Error("Failed to fetch dishes");
   }
