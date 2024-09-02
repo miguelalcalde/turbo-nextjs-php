@@ -31,7 +31,7 @@ async function getRestaurantDishes(
   if (!response.ok) {
     throw new Error("Failed to fetch dishes");
   }
-  let data = await response.json();
+  const data = await response.json();
   return { dishes: data.data, totalPages: data.meta.total_pages };
 }
 
