@@ -1,9 +1,13 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  // Config options here
-};
-import vercelToolbar from "@vercel/toolbar/plugins/next";
+// Remove or comment out this line
+// import { withVercelToolbar } from '@vercel/toolbar/plugins/next';
 
-const withVercelToolbar = vercelToolbar();
-// Instead of module.exports = nextConfig, do this:
-export default withVercelToolbar(nextConfig);
+// Your existing Next.js config
+const nextConfig = {
+  // Your configuration options
+};
+
+// Remove or comment out this line if it exists
+// export default withVercelToolbar(nextConfig);
+
+// Instead, use this:
+export default nextConfig;
