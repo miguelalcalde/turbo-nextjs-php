@@ -1,11 +1,16 @@
 <?php
 
 function getPDO() {
-    $host = 'localhost';
-    $db   = 'postgres';
-    $user = 'myuser';
-    $pass = 'mypassword';
-    $port = '5432';
+    $host = getenv('DB_HOST');
+    $db   = getenv('DB_NAME');
+    $user = getenv('DB_USER');
+    $pass = getenv('DB_PASS');
+    $port = getenv('DB_PORT');
+
+    // Debugging: Check if environment variables are correctly retrieved
+    if (!$host || !$db || !$user || !$pass || !$port) {
+        throw new \Exception("Environment variables not set correctly: host=$host, db=$db, user=$user, pass=$pass, port=$port");
+    }
 
     $dsn = "pgsql:host=$host;dbname=$db;port=$port";
     $options = [
