@@ -7,7 +7,7 @@ use App\Controllers\RestaurantController;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$dotenv = Dotenv\Dotenv::createUnsafeImmutable(__DIR__ . '/../');
+$dotenv = Dotenv\Dotenv::createUnsafeImmutable(__DIR__ . '/../../../');
 $dotenv->load();
 
 // Check if environment variables are loaded

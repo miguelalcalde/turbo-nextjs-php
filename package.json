@@ -4,12 +4,14 @@
   "packageManager": "pnpm@9.1.1",
   "private": true,
   "scripts": {
-    "dev": "pnpm run --parallel -r dev",
-    "build": "pnpm run --parallel -r build",
-    "start": "pnpm run --parallel -r start",
-    "lint": "pnpm run --parallel -r lint"
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "prettier": "^3.2.5",
     "turbo": "latest"
   }
 }
