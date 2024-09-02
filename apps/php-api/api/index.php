@@ -11,7 +11,7 @@ $dotenv = Dotenv\Dotenv::createUnsafeImmutable(__DIR__ . '/../../../');
 $dotenv->load();
 
 // Check if environment variables are loaded
-if (!getenv('DB_HOST') || !getenv('DB_NAME') || !getenv('DB_USER') || !getenv('DB_PASS') || !getenv('DB_PORT')) {
+if (!$_ENV['DB_HOST'] || !$_ENV['DB_NAME'] || !$_ENV['DB_USER'] || !$_ENV['DB_PASS'] || !$_ENV['DB_PORT']) {
     throw new \Exception("Environment variables not loaded correctly");
 }
 
