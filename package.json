@@ -5,9 +5,9 @@
   "private": true,
   "scripts": {
     "dev": "pnpm run --parallel -r dev",
-    "build": "turbo run build",
-    "start": "turbo run start",
-    "lint": "turbo run lint"
+    "build": "pnpm run --parallel -r build",
+    "start": "pnpm run --parallel -r start",
+    "lint": "pnpm run --parallel -r lint"
   },
   "devDependencies": {
     "turbo": "latest"

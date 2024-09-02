@@ -9,7 +9,7 @@ const categoryColors = [
   "bg-pink-100 text-pink-800",
 ];
 
-export default function CardRestaurant({ restaurant }) {
+export default function CardRestaurant({ restaurant }: { restaurant: any }) {
   return (
     <Card className="overflow-hidden">
       <CardHeader>
@@ -20,7 +20,7 @@ export default function CardRestaurant({ restaurant }) {
           {restaurant.address}
         </address>
         <div className="flex flex-wrap gap-2">
-          {restaurant.categories.map((category, catIndex) => (
+          {restaurant.categories.map((category: string, catIndex: number) => (
             <span
               key={catIndex}
               className={`px-2 py-1 rounded-full text-xs font-medium ${
