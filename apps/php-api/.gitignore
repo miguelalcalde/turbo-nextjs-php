@@ -22,3 +22,4 @@
 /.env.staging.local
 /.env.preprod.local
 /.env.phpunit
+/.env.php

@@ -1,11 +1,11 @@
 <?php
 
 function getPDO() {
-    $host = $_ENV['DB_HOST'];
-    $db   = $_ENV['DB_NAME'];
-    $user = $_ENV['DB_USER'];
-    $pass = $_ENV['DB_PASS'];
-    $port = $_ENV['DB_PORT'];
+    $host = getenv('DB_HOST');
+    $db   = getenv('DB_NAME');
+    $user = getenv('DB_USER');
+    $pass = getenv('DB_PASS');
+    $port = getenv('DB_PORT');
 
     // Debugging: Check if environment variables are correctly retrieved
     if (!$host || !$db || !$user || !$pass || !$port) {
