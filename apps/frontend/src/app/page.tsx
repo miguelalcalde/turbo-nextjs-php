@@ -1,188 +1,253 @@
-import {
-  Card,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
-  Tooltip,
-  TooltipTrigger,
-  TooltipContent,
-  TooltipProvider,
-} from "@/components/ui/tooltip";
-import { ArrowRight, ExternalLink } from "lucide-react";
-import Image from "next/image";
-import { fileURLToPath } from "url";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Card, CardContent } from "@/components/ui/card";
+import { Search, Utensils, Clock, Star } from "lucide-react";
 
-// Get the current file URL and convert it to a file path
-const __filename = fileURLToPath(import.meta.url);
-
-export default function Home() {
+export default function LandingPage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center  lg:static lg:size-auto">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className="flex flex-col min-h-screen">
+      <header className="px-4 lg:px-6 h-14 flex items-center">
+        <Link className="flex items-center justify-center" href="/">
+          <Utensils className="h-6 w-6 mr-2" />
+          <span className="font-bold">DishDash</span>
+        </Link>
+        <nav className="ml-auto flex gap-4 sm:gap-6">
+          <Link
+            className="text-sm font-medium hover:underline underline-offset-4"
+            href="#features"
           >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-      <div className="gap-10 relative flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger>
-              <a
-                href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2"
-              >
-                <Image
-                  className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-                  src="/next.svg"
-                  alt="Next.js Logo"
-                  width={180}
-                  height={37}
-                  priority
-                />
-              </a>
-            </TooltipTrigger>
-            <TooltipContent className="mb-2">
-              <a
-                href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2"
-              >
-                Next.js docs
-                <ExternalLink className="w-4 h-4" />
-              </a>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
-        <span className="text-4xl">+</span>
-        <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger>
-              <a
-                href="https://ui.shadcn.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2"
-              >
-                <Image
-                  className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert h-20 w-20 rounded-md"
-                  src="/shadcn.png"
-                  alt="Shadcn Logo"
-                  width={180}
-                  height={180}
-                  priority
-                />
-              </a>
-            </TooltipTrigger>
-            <TooltipContent className="mb-2">
-              <a
-                href="https://ui.shadcn.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2"
-              >
-                Shadcn-ui docs
-                <ExternalLink className="w-4 h-4" />
-              </a>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
-      </div>
-      <h2 className="font-extralight text-4xl -mt-40">Demo starter kit</h2>
-
-      <div className="flex mb-32 gap-5 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+            Features
+          </Link>
+          <Link
+            className="text-sm font-medium hover:underline underline-offset-4"
+            href="#how-it-works"
+          >
+            How It Works
+          </Link>
+          <Link
+            className="text-sm font-medium hover:underline underline-offset-4"
+            href="#pricing"
+          >
+            Pricing
+          </Link>
+        </nav>
+      </header>
+      <main className="flex-1">
+        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
+                  Choose your pizza in seconds, not minutes
+                </h1>
+                <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
+                  Discover and order from the best local restaurants with ease.
+                  Your perfect meal is just a tap away.
+                </p>
+              </div>
+              {/* <div className="w-full max-w-sm space-y-2">
+                <form className="flex space-x-2">
+                  <Input
+                    className="max-w-lg flex-1"
+                    placeholder="Enter your location"
+                    type="text"
+                  />
+                  <Button type="submit">Search</Button>
+                </form>
+              </div> */}
+              <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
+                <Link href="/restaurants">
+                  <Card>
+                    <CardContent className="flex flex-col items-center space-y-4 p-6">
+                      <Utensils className="h-12 w-12 text-primary" />
+                      <h3 className="text-2xl font-bold text-center">
+                        Restaurants
+                      </h3>
+                      <p className="text-gray-500 dark:text-gray-400 text-center">
+                        Explore a wide variety of local restaurants in your
+                        area.
+                      </p>
+                    </CardContent>
+                  </Card>
+                </Link>
+                <Link href="/dishes">
+                  <Card>
+                    <CardContent className="flex flex-col items-center space-y-4 p-6">
+                      <Search className="h-12 w-12 text-primary" />
+                      <h3 className="text-2xl font-bold text-center">Dishes</h3>
+                      <p className="text-gray-500 dark:text-gray-400 text-center">
+                        Find and compare dishes from different restaurants.
+                      </p>
+                    </CardContent>
+                  </Card>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          id="features"
+          className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800"
         >
-          <Card className="h-full hover:-translate-y-1 transition hover:shadow-lg">
-            <CardHeader>
-              <CardTitle className="mb-3 text-2xl font-semibold">
-                Docs <ArrowRight className="w-6 h-6 inline-flex mb-1" />
-              </CardTitle>
-              <CardDescription className="m-0 max-w-[30ch] text-sm opacity-50">
-                Find in-depth information about Next.js features and API.
-              </CardDescription>
-            </CardHeader>
-          </Card>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Card className="h-full hover:-translate-y-1 transition hover:shadow-lg">
-            <CardHeader>
-              <CardTitle className="mb-3 text-2xl font-semibold">
-                Learn <ArrowRight className="w-6 h-6 inline-flex mb-1" />
-              </CardTitle>
-              <CardDescription className="m-0 max-w-[30ch] text-sm opacity-50">
-                Learn about Next.js in an interactive course with&nbsp;quizzes!
-              </CardDescription>
-            </CardHeader>
-          </Card>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Card className="h-full hover:-translate-y-1 transition hover:shadow-lg">
-            <CardHeader>
-              <CardTitle className="mb-3 text-2xl font-semibold">
-                Templates <ArrowRight className="w-6 h-6 inline-flex mb-1" />
-              </CardTitle>
-              <CardDescription className="m-0 max-w-[30ch] text-sm opacity-50">
-                Explore starter templates for Next.js.
-              </CardDescription>
-            </CardHeader>
-          </Card>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Card className="h-full hover:-translate-y-1 transition hover:shadow-lg">
-            <CardHeader>
-              <CardTitle className="mb-3 text-2xl font-semibold">
-                Deploy <ArrowRight className="w-6 h-6 inline-flex mb-1" />
-              </CardTitle>
-              <CardDescription className="m-0 max-w-[30ch] text-sm opacity-50">
-                Instantly deploy your Next.js site to a shareable URL with
-                Vercel.
-              </CardDescription>
-            </CardHeader>
-          </Card>
-        </a>
-      </div>
-    </main>
+          <div className="container px-4 md:px-6">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12">
+              Features
+            </h2>
+            <div className="grid gap-6 lg:grid-cols-3 lg:gap-12">
+              <Card>
+                <CardContent className="flex flex-col items-center space-y-4 p-6">
+                  <Search className="h-12 w-12 text-primary" />
+                  <h3 className="text-2xl font-bold text-center">
+                    Quick Search
+                  </h3>
+                  <p className="text-gray-500 dark:text-gray-400 text-center">
+                    Find restaurants and dishes instantly with our powerful
+                    search engine.
+                  </p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="flex flex-col items-center space-y-4 p-6">
+                  <Utensils className="h-12 w-12 text-primary" />
+                  <h3 className="text-2xl font-bold text-center">
+                    Extensive Menu Database
+                  </h3>
+                  <p className="text-gray-500 dark:text-gray-400 text-center">
+                    Browse through detailed menus from a wide variety of
+                    restaurants.
+                  </p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="flex flex-col items-center space-y-4 p-6">
+                  <Clock className="h-12 w-12 text-primary" />
+                  <h3 className="text-2xl font-bold text-center">
+                    Real-time Updates
+                  </h3>
+                  <p className="text-gray-500 dark:text-gray-400 text-center">
+                    Get the latest information on dish availability and wait
+                    times.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+        <section id="how-it-works" className="w-full py-12 md:py-24 lg:py-32">
+          <div className="container px-4 md:px-6">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12">
+              How It Works
+            </h2>
+            <div className="grid gap-6 lg:grid-cols-3 lg:gap-12">
+              <div className="flex flex-col items-center space-y-4">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-white text-2xl font-bold">
+                  1
+                </div>
+                <h3 className="text-xl font-bold">Search</h3>
+                <p className="text-gray-500 dark:text-gray-400 text-center">
+                  Enter your location or cuisine preference
+                </p>
+              </div>
+              <div className="flex flex-col items-center space-y-4">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-white text-2xl font-bold">
+                  2
+                </div>
+                <h3 className="text-xl font-bold">Browse</h3>
+                <p className="text-gray-500 dark:text-gray-400 text-center">
+                  Explore menus and read reviews
+                </p>
+              </div>
+              <div className="flex flex-col items-center space-y-4">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-white text-2xl font-bold">
+                  3
+                </div>
+                <h3 className="text-xl font-bold">Order</h3>
+                <p className="text-gray-500 dark:text-gray-400 text-center">
+                  Choose your dishes and place your order
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
+          <div className="container px-4 md:px-6">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12">
+              What Our Users Say
+            </h2>
+            <div className="grid gap-6 lg:grid-cols-3 lg:gap-12">
+              <Card>
+                <CardContent className="flex flex-col items-center space-y-4 p-6">
+                  <Star className="h-12 w-12 text-yellow-400" />
+                  <p className="text-gray-500 dark:text-gray-400 text-center">
+                    "This app has revolutionized how I order food. So quick and
+                    easy!"
+                  </p>
+                  <p className="font-semibold">- Sarah M.</p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="flex flex-col items-center space-y-4 p-6">
+                  <Star className="h-12 w-12 text-yellow-400" />
+                  <p className="text-gray-500 dark:text-gray-400 text-center">
+                    "I love being able to compare menus from different
+                    restaurants so easily."
+                  </p>
+                  <p className="font-semibold">- John D.</p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="flex flex-col items-center space-y-4 p-6">
+                  <Star className="h-12 w-12 text-yellow-400" />
+                  <p className="text-gray-500 dark:text-gray-400 text-center">
+                    "The real-time updates on wait times have saved me so much
+                    time!"
+                  </p>
+                  <p className="font-semibold">- Emily R.</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+        <section className="w-full py-12 md:py-24 lg:py-32">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                  Ready to start ordering smarter?
+                </h2>
+                <p className="mx-auto max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
+                  Download our app now and experience the future of food
+                  ordering.
+                </p>
+              </div>
+              <div className="space-x-4">
+                <Button>Download for iOS</Button>
+                <Button variant="outline">Download for Android</Button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
+        <p className="text-xs text-gray-500 dark:text-gray-400">
+          © 2024 DishDash. All rights reserved.
+        </p>
+        <nav className="sm:ml-auto flex gap-4 sm:gap-6">
+          <Link
+            className="text-xs hover:underline underline-offset-4"
+            href="/terms"
+          >
+            Terms of Service
+          </Link>
+          <Link
+            className="text-xs hover:underline underline-offset-4"
+            href="/privacy"
+          >
+            Privacy
+          </Link>
+        </nav>
+      </footer>
+    </div>
   );
 }
