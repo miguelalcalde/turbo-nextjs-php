@@ -22,17 +22,22 @@ export function CardRestaurant({ restaurant }: { restaurant: Restaurant }) {
           <address className="not-italic mb-4 text-sm text-muted-foreground">
             {restaurant.address}
           </address>
-          <div className="flex flex-wrap gap-2">
-            {restaurant.categories.map((category: string, catIndex: number) => (
-              <span
-                key={catIndex}
-                className={`px-2 py-1 rounded-full text-xs font-medium ${
-                  categoryColors[catIndex % categoryColors.length]
-                }`}
-              >
-                {category}
-              </span>
-            ))}
+          <div className="relative">
+            <div className="flex overflow-x-auto pb-2 scrollbar-hide">
+              {restaurant.categories.map(
+                (category: string, catIndex: number) => (
+                  <span
+                    key={catIndex}
+                    className={`px-2 py-1 rounded-full text-xs font-medium whitespace-nowrap mr-2 ${
+                      categoryColors[catIndex % categoryColors.length]
+                    }`}
+                  >
+                    {category}
+                  </span>
+                )
+              )}
+            </div>
+            <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent pointer-events-none"></div>
           </div>
         </CardContent>
       </Card>
