@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+// import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Search, Utensils, Clock, Star } from "lucide-react";
 
@@ -180,8 +180,8 @@ export default function LandingPage() {
                 <CardContent className="flex flex-col items-center space-y-4 p-6">
                   <Star className="h-12 w-12 text-yellow-400" />
                   <p className="text-gray-500 dark:text-gray-400 text-center">
-                    "This app has revolutionized how I order food. So quick and
-                    easy!"
+                    &ldquo;This app has revolutionized how I order food. So
+                    quick and easy!&rdquo;
                   </p>
                   <p className="font-semibold">- Sarah M.</p>
                 </CardContent>
@@ -190,8 +190,8 @@ export default function LandingPage() {
                 <CardContent className="flex flex-col items-center space-y-4 p-6">
                   <Star className="h-12 w-12 text-yellow-400" />
                   <p className="text-gray-500 dark:text-gray-400 text-center">
-                    "I love being able to compare menus from different
-                    restaurants so easily."
+                    &ldquo;I love being able to compare menus from different
+                    restaurants so easily.&rdquo;
                   </p>
                   <p className="font-semibold">- John D.</p>
                 </CardContent>
@@ -200,8 +200,8 @@ export default function LandingPage() {
                 <CardContent className="flex flex-col items-center space-y-4 p-6">
                   <Star className="h-12 w-12 text-yellow-400" />
                   <p className="text-gray-500 dark:text-gray-400 text-center">
-                    "The real-time updates on wait times have saved me so much
-                    time!"
+                    &ldquo;The real-time updates on wait times have saved me so
+                    much time!&rdquo;
                   </p>
                   <p className="font-semibold">- Emily R.</p>
                 </CardContent>
