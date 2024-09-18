@@ -31,7 +31,7 @@ $app->get('/', function (Request $request, Response $response) {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>API Endpoints</title>
+        <title>API Endpoints - Staging</title>
         <link rel="icon" type="image/x-icon" href="/favicon.ico">
     </head>
     <body>
